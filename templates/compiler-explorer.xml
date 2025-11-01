@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>compiler-explorer</Name>
+  <Repository>ghcr.io/compiler-explorer/compiler-explorer:latest</Repository>
+  <Registry>https://ghcr.io</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/compiler-explorer/compiler-explorer/issues</Support>
+  <Project>https://godbolt.org/</Project>
+  <Category>Development</Category>
+  
+  <Config Name="Compiler Explorer Data" Target="/var/ce-data" Default="/mnt/user/appdata/compiler-explorer" Mode="rw" Description="Container Path: /var/ce-data" Type="path" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Port" Target="10240" Default="10240" Mode="tcp" Description="Container Port: 10240" Type="port" Display="always" Required="true" Mask="false"></Config>
+  
+  <Environment>
+    <Variable Name="NODE_ENV" Value="production" Mode=""/>
+    <Variable Name="CE_DOCKER" Value="true" Mode=""/>
+    <Variable Name="CUSTOM_CE_SOURCE" Value="github/compiler-explorer" Mode=""/>
+  </Environment>
+  
+  <Labels>
+    <Label Name="net.unraid.docker.managed" Value="dockersystem" />
+    <Label Name="net.unraid.docker.webui" Value="http://[IP]:[PORT:10240]/" />
+    <Label Name="net.unraid.docker.icon" Value="https://raw.githubusercontent.com/compiler-explorer/compiler-explorer/main/static/logo.png" />
+  </Labels>
+</Container>
