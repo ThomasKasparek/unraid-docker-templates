@@ -2,7 +2,7 @@
   "name": "docker-templates",
   "description": "Collection of Docker templates for Unraid",
   "author": "Your Name",
-  "repository": "https://github.com/ThomasKasparek/docker-templates",
+  "repository": "https://github.com/ThomasKasparek/unraid-docker-templates",
   "type": "template-repository",
   "version": "1.0.0",
   "templates": [
